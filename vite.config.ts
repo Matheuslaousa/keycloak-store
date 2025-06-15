@@ -30,9 +30,14 @@ export default defineConfig({
         ]
       }
     })
+<<<<<<< HEAD
   ],
   server: {
     port: 3000,
     strictPort: true,
   }
 });
+=======
+  ]
+});
+
