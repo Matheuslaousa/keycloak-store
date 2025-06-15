@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { CartProvider } from './contexts/CartContext';
-import keycloak from './contexts/Keycloak'; // assuming you defined it here
+import keycloak from './contexts/Keycloak';
 
-keycloak.init({ onLoad: 'login-required' }).then((authenticated) => {
+keycloak.init({ onLoad: 'login-required' }).then(authenticated => {
   if (!authenticated) {
-    console.warn('User not authenticated - reloading...');
+    console.warn('Usuário não autenticado - recarregando...');
     window.location.reload();
   } else {
-    console.log('Authenticated');
+    console.log('Usuário autenticado');
 
-    ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+    ReactDOM.createRoot(document.getElementById('root')).render(
       <React.StrictMode>
         <CartProvider>
           <App />
@@ -19,6 +19,6 @@ keycloak.init({ onLoad: 'login-required' }).then((authenticated) => {
       </React.StrictMode>
     );
   }
-}).catch((err) => {
-  console.error('Keycloak init failed:', err);
+}).catch(err => {
+  console.error('Falha na inicialização do Keycloak:', err);
 });

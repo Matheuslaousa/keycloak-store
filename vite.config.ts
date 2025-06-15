@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'; 
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
@@ -30,14 +30,12 @@ export default defineConfig({
         ]
       }
     })
-<<<<<<< HEAD
   ],
   server: {
     port: 3000,
     strictPort: true,
+    allowedHosts: [
+      'a2a3-2804-14d-8465-8805-d021-46eb-6c5e-9355.ngrok-free.app'
+    ]
   }
 });
-=======
-  ]
-});
-
