@@ -32,10 +32,8 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 3000,
+    port: Number(process.env.PORT) || 3000,
+    host: '0.0.0.0',
     strictPort: true,
-    allowedHosts: [
-      'a2a3-2804-14d-8465-8805-d021-46eb-6c5e-9355.ngrok-free.app'
-    ]
   }
 });
